@@ -35,6 +35,12 @@ public class Contacto implements Serializable {
         this.edad = edad;
     }
 
+    public Contacto(String nombre, String email, int edad) {
+        this.nombre = nombre;
+        this.email = email;
+        this.edad = edad;
+    }
+
     public int getIdContacto() {
         return idContacto;
     }
@@ -65,28 +71,5 @@ public class Contacto implements Serializable {
 
     public void setEdad(int edad) {
         this.edad = edad;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Contacto contactos = (Contacto) o;
-        return idContacto == contactos.idContacto && edad == contactos.edad && Objects.equals(nombre, contactos.nombre) && Objects.equals(email, contactos.email);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(idContacto, nombre, email, edad);
-    }
-
-    @Override
-    public String toString() {
-        return "Contacto{" +
-                "idContacto=" + idContacto +
-                ", nombre='" + nombre + '\'' +
-                ", email='" + email + '\'' +
-                ", edad=" + edad +
-                '}';
     }
 }
