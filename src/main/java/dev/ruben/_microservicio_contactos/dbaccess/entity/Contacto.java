@@ -2,7 +2,6 @@ package dev.ruben._microservicio_contactos.dbaccess.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Objects;
 
 /**
  * Clase de persistencia para la tabla "contactos" de la BD "04_microservicio_contactos"
@@ -28,7 +27,7 @@ public class Contacto implements Serializable {
 
     }
 
-    public Contacto(int idContacto, String nombre, String email, int edad) {
+    public Contacto(Integer idContacto, String nombre, String email, int edad) {
         this.idContacto = idContacto;
         this.nombre = nombre;
         this.email = email;
@@ -41,11 +40,11 @@ public class Contacto implements Serializable {
         this.edad = edad;
     }
 
-    public int getIdContacto() {
+    public Integer getIdContacto() {
         return idContacto;
     }
 
-    public void setIdContacto(int idContacto) {
+    public void setIdContacto(Integer idContacto) {
         this.idContacto = idContacto;
     }
 
