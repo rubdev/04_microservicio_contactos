@@ -26,8 +26,8 @@ public class ContactoController {
     }
 
     @PostMapping(value = "contactos", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public String guardarContacto(@RequestBody(required = true) Contacto contacto) {
-        return String.valueOf(agendaService.agregarContacto(contacto));
+    public void guardarContacto(@RequestBody(required = true) Contacto contacto) throws Exception {
+        agendaService.agregarContacto(contacto);
     }
 
     @DeleteMapping(value = "contactos/{id}")

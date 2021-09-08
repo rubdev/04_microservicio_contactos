@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface AgendaService {
 
-    boolean agregarContacto(Contacto contacto);
+    void agregarContacto(Contacto contacto) throws Exception;
     List<Contacto> recuperarContactos();
     void actualizarContacto(Contacto contacto);
     boolean eliminarContacto(Integer idContacto);

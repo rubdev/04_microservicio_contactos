@@ -14,12 +14,12 @@ public class AgendaServiceImpl implements AgendaService {
     ContactosRepository contactosRepository;
 
     @Override
-    public boolean agregarContacto(Contacto contacto) {
-        if (contacto != null) {
+    public void agregarContacto(Contacto contacto) throws Exception {
+        if (contacto.getEmail() != null && contactosRepository.findByEmail(contacto.getEmail()) == null) {
             contactosRepository.save(contacto);
-            return true;
+            return;
         }
-        return false;
+        throw new Exception("Ocurrió un error al guardar contacto -> el contacto es repetido");
     }
 
     @Override
